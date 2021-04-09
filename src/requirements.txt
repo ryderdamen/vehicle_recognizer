@@ -1,0 +1,10 @@
+numpy==1.14.3
+tensorflow==1.7.0
+keras==2.1.6
+pillow==5.1.0
+sklearn==0.0
+console-progressbar==1.0.2
+opencv-python==3.4.0.12
+h5py<3.0.0
+flask==1.1.2
+gunicorn==20.1.0

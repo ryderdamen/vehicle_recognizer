@@ -19,14 +19,12 @@ if __name__ == '__main__':
     class_names = cars_meta['class_names']  # shape=(1, 196)
     class_names = np.transpose(class_names)
 
-    test_path = 'data/test/'
+    test_path = '/test/'
     test_images = [f for f in os.listdir(test_path) if
                    os.path.isfile(os.path.join(test_path, f)) and f.endswith('.jpg')]
 
-    num_samples = 20
-    samples = random.sample(test_images, num_samples)
     results = []
-    for i, image_name in enumerate(samples):
+    for i, image_name in enumerate(test_images):
         filename = os.path.join(test_path, image_name)
         print('Start processing image: {}'.format(filename))
         bgr_img = cv.imread(filename)
