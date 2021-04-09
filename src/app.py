@@ -29,8 +29,6 @@ def classify():
         return jsonify({'error': 'no file'})
     bgr_img = cv.imdecode(np.fromstring(request.files['file'].read(), np.uint8), cv.IMREAD_UNCHANGED)
     img_width, img_height = 224, 224
-    # filename = '/test/test.jpg'
-    # bgr_img = cv.imread(filename)
     bgr_img = cv.resize(bgr_img, (img_width, img_height), cv.INTER_CUBIC)
     rgb_img = cv.cvtColor(bgr_img, cv.COLOR_BGR2RGB)
     rgb_img = np.expand_dims(rgb_img, 0)
