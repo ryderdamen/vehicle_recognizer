@@ -6,4 +6,4 @@ COPY src/requirements.txt .
 RUN pip install -r requirements.txt
 COPY src/ .
 COPY test/ /test
-CMD [ "gunicorn", "--workers", "1", "-b", "0.0.0.0:8000", "wsgi" ]
+CMD [ "gunicorn", "--workers", "1", "--timeout", "60", "-b", "0.0.0.0:8000", "wsgi" ]

@@ -13,6 +13,10 @@ install:
 run:
 	@docker run -p 8000:8000 $(IMAGE_NAME):$(VERSION)
 
+.PHONY: debug
+debug:
+	@docker run -p 8000:8000 $(IMAGE_NAME):$(VERSION) python app.py
+
 .PHONY: test
 test:
 	@docker run $(IMAGE_NAME):$(VERSION) python demo.py --i /test/jeep.jpg
